@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded',() => {
     //Global Variables
     const keyboard = document.getElementById('qwerty');
-    const phrase = document.getElementById('phrase');
+    const phrase = document.querySelector('#phrase ul');
     const overlayDiv = document.getElementById('overlay');
     const heading = overlayDiv.getElementsByTagName("h2")[0];
     const buttonReset = document.getElementsByClassName('btn__reset')[0];
