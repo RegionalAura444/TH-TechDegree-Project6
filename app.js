@@ -67,8 +67,8 @@ document.addEventListener('DOMContentLoaded',() => {
             let letterFound = checkLetter(e.target);
             if (!letterFound) {
                 missed++;
-                const lostHeart = 5 - missed;
-                lives[lostHeart].setAttribute("src","images/lostHeart.png");
+                const lostLife = 5 - missed;
+                lives[lostLife].setAttribute("src","images/lostHeart.png");
             }
         }
         checkWin();
@@ -76,8 +76,8 @@ document.addEventListener('DOMContentLoaded',() => {
 
     function resetGame() {
         //reset lives
-        const lostHeart = 5 - missed;
-        for (let i =4; i>=lostHeart; i--) {
+        const lostLife = 5 - missed;
+        for (let i =4; i>=lostLife; i--) {
             lives[i].setAttribute("src","images/liveHeart.png");
         }
         //reset overlayDiv
@@ -86,7 +86,6 @@ document.addEventListener('DOMContentLoaded',() => {
         } else if (letter.length === show.length) {
             overlayDiv.classList.remove("win");
         }
-        //set missed to zero
         missed = 0;
         //recreate keyboard
         const chosenButtons = document.querySelectorAll(".chosen");
@@ -94,7 +93,7 @@ document.addEventListener('DOMContentLoaded',() => {
             chosenButtons[i].disabled = false;
             chosenButtons[i].classList.remove("chosen");
         }
-        //generate new phrase
+        //new phrase
         while (phrase.firstChild) {
             phrase.removeChild(phrase.lastChild);
         }
