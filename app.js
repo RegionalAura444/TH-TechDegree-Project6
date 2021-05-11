@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded',() => {
         'ala ala ala' ];
 
     function getRandomPhraseAsArray(arr) {
-    
         const random = Math.floor (Math.random() * arr.length);
         //splits to new arrays of chars
         const str = arr[random];
@@ -50,15 +49,13 @@ document.addEventListener('DOMContentLoaded',() => {
                 match = button.textContent;
             } 
         }
-        //if no match found, return match = null and exit function
+        //if no match, return match = null and exit function
         return match;
     }
-
     //listen for the "Start Game" button
     buttonReset.addEventListener('click', () => {
         overlayDiv.style.display = "none";
         });
-
     //listen for onscreen keyboard clicks
     keyboard.addEventListener("click", (e) => {
         if (e.target.tagName === 'BUTTON' && !e.target.classList.contains('chosen')) {
@@ -73,7 +70,6 @@ document.addEventListener('DOMContentLoaded',() => {
         }
         checkWin();
     });
-
     function resetGame() {
         //reset lives
         const lostLife = 5 - missed;
@@ -99,9 +95,7 @@ document.addEventListener('DOMContentLoaded',() => {
         }
         phraseArray = getRandomPhraseAsArray(phrases);
         addPhraseToDisplay(phraseArray);
-
     }
-
     // checks if user wins or loses by checking shown letter length, or missed count
     function checkWin() {
         if (letter.length === show.length) {
@@ -122,8 +116,7 @@ document.addEventListener('DOMContentLoaded',() => {
                 });
         }
     }
-
-
-    let phraseArray = getRandomPhraseAsArray(phrases);
+   let phraseArray = getRandomPhraseAsArray(phrases);
     addPhraseToDisplay(phraseArray);
+    
 });
