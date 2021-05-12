@@ -27,6 +27,7 @@ body {
   flex-direction: column;
   display: flex;
   height: 100vh;
+  overflow-y:hidden;
 }
 
 li, ol, ul {
